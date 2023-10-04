@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="frist-div">
+        <h1>Programming Languages</h1>
+        <p>Thes are some programming languages:</p>
+        <ul class="languages">
+            <li class="p-languages" id="frist-li">JavaScript</li>
+            <p>We can create interactive Websites using JavaScript</p>
+            <li class="p-languages" id="secound-li">Kotlin</li>
+            <p>we can develop Android apps using Kotlin</p>
+            <li class="p-languages" id="last-li">Swift</li>
+            <p>we can develop iOS apps using Swift</p>
+        </ul>
+    </div>
+    <h3>Clicks: <span id="clicks">0</span></h3>
+    <!-- لما يضغط على الزر استدعي الدالة -->
+    <button type="button" onclick="add()">+</button>
+    <script>
+        // جيب لي العنصر اللي عنوانه كذا 
+        // let kotlin = document.getElementById('secound-li')
+        // console.log(kotlin)
+
+        // جيب العنصر اللي كلاسه ذا
+        // let languages = document.getElementsByClassName('p-languages')
+        // console.log(languages[1])
+
+        // عن طريق tag name
+        // let list = document.getElementsByTagName('li')
+        // console.log(list[0])
+
+        // الوصول لأول عنصر متوافق
+        // let text = document.querySelector('.languages p')
+        // console.log(text);
+
+        // الوصول لكل العناصر المتوافقة على شكل مصفوفة
+        // let textList = document.querySelectorAll('.languages p')
+        // console.log(textList[2])
+
+        // التغيير على صفحة الويب بدون التغيير في ملف html
+        let android = document.querySelector('#secound-li')
+        android.innerText = "java"
+        // التغيير على التصميم
+        let ios = document.querySelector('#last-li')
+        ios.style.background = "blue"
+        ios.style.color = "red"
+        ios.style.textAlign = "center"
+
+        // اضافة عنصر جديد في الدوم
+        let languageList= document.querySelector('.languages')
+        // انشاء العنصر
+        let ruby = document.createElement("li")
+        ruby.innerText="Ruby"
+        // اختيار مكان العنصر
+        languageList.append(ruby)
+        console.log(languageList)
+
+        // حذف عنصر من صفحة الويب
+        let languageList2 = document.querySelector('.languages')
+        let ios2 = document.querySelectorAll("li")[2]
+        ios2.remove()
+
+        // زر لاإضافة
+        let clicks =0;
+        function add(){
+            clicks++;
+            document.getElementById("clicks").innerText=clicks;
+        }
+
+    </script>
+</body>
+</html>
